@@ -631,6 +631,7 @@ class XMLSecurityDSig
         $id_name = 'Id';
         $overwrite_id  = true;
         $force_uri = false;
+        $reference_uri = '';
 
         if (is_array($options)) {
             $prefix = empty($options['prefix']) ? null : $options['prefix'];
@@ -638,6 +639,7 @@ class XMLSecurityDSig
             $id_name = empty($options['id_name']) ? 'Id' : $options['id_name'];
             $overwrite_id = !isset($options['overwrite']) ? true : (bool) $options['overwrite'];
             $force_uri = !isset($options['force_uri']) ? false : (bool) $options['force_uri'];
+            $reference_uri = !isset($options['reference_uri']) ? null : $options['reference_uri'];
         }
 
         $attname = $id_name;
@@ -648,7 +650,9 @@ class XMLSecurityDSig
         $refNode = $this->createNewSignNode('Reference');
         $sinfoNode->appendChild($refNode);
 
-        if (! $node instanceof DOMDocument) {
+        if ($reference_uri) {
+            $refNode->setAttribute("URI", $reference_uri);
+        } elseif (! $node instanceof DOMDocument) {
             $uri = null;
             if (! $overwrite_id) {
                 $uri = $prefix_ns ? $node->getAttributeNS($prefix_ns, $id_name) : $node->getAttribute($id_name);
@@ -659,7 +663,7 @@ class XMLSecurityDSig
             }
             $refNode->setAttribute("URI", '#'.$uri);
         } elseif ($force_uri) {
-            $refNode->setAttribute("URI", '');
+            $refNode->setAttribute("URI", '#'.$uri);
         }
 
         $transNodes = $this->createNewSignNode('Transforms');
