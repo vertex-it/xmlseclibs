@@ -3,7 +3,7 @@ Test getSymmetricKeySize().
 --FILE--
 <?php
 require(dirname(__FILE__) . '/../xmlseclibs.php');
-use RobRichards\XMLSecLibs\XMLSecurityKey;
+use VertexIT\XMLSecLibs\XMLSecurityKey;
 
 $keysizes = array(
     XMLSecurityKey::TRIPLEDES_CBC => 24,

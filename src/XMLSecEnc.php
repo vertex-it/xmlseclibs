@@ -1,12 +1,12 @@
 <?php
-namespace RobRichards\XMLSecLibs;
+namespace VertexIT\XMLSecLibs;
 
 use DOMDocument;
 use DOMElement;
 use DOMNode;
 use DOMXPath;
 use Exception;
-use RobRichards\XMLSecLibs\Utils\XPath as XPath;
+use VertexIT\XMLSecLibs\Utils\XPath as XPath;
 
 /**
  * xmlseclibs.php

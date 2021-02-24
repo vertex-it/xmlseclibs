@@ -1,5 +1,5 @@
 <?php
-namespace RobRichards\XMLSecLibs;
+namespace VertexIT\XMLSecLibs;
 
 use DOMElement;
 use Exception;

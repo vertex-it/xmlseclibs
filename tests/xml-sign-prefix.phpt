@@ -3,8 +3,8 @@ Basic Signature with no namespace prefix
 --FILE--
 <?php
 require(dirname(__FILE__) . '/../xmlseclibs.php');
-use RobRichards\XMLSecLibs\XMLSecurityDSig;
-use RobRichards\XMLSecLibs\XMLSecurityKey;
+use VertexIT\XMLSecLibs\XMLSecurityDSig;
+use VertexIT\XMLSecLibs\XMLSecurityKey;
 
 $prefixes = array('ds' => 'ds', 'pfx' => 'pfx', 'none' => null);
 

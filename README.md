@@ -21,7 +21,7 @@ xmlseclibs requires PHP version 5.4 or greater. **5.6.24+ recommended for securi
 Install with [`composer.phar`](http://getcomposer.org).
 
 ```sh
-php composer.phar require "robrichards/xmlseclibs"
+php composer.phar require "vertex-it/xmlseclibs"
 ```
 
 
@@ -38,8 +38,8 @@ xmlseclibs is being used in many different software.
 The example below shows basic usage of xmlseclibs, with a SHA-256 signature.
 
 ```php
-use RobRichards\XMLSecLibs\XMLSecurityDSig;
-use RobRichards\XMLSecLibs\XMLSecurityKey;
+use VertexIT\XMLSecLibs\XMLSecurityDSig;
+use VertexIT\XMLSecLibs\XMLSecurityKey;
 
 // Load the XML to be signed
 $doc = new DOMDocument();
@@ -79,7 +79,7 @@ $doc->save('./path/to/signed.xml');
 
 ## How to Contribute
 
-* [Open Issues](https://github.com/robrichards/xmlseclibs/issues)
-* [Open Pull Requests](https://github.com/robrichards/xmlseclibs/pulls)
+* [Open Issues](https://github.com/vertex-it/xmlseclibs/issues)
+* [Open Pull Requests](https://github.com/vertex-it/xmlseclibs/pulls)
 
 Mailing List: https://groups.google.com/forum/#!forum/xmlseclibs
